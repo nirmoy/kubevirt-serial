@@ -163,7 +163,7 @@ func main() {
 	server := grpc.NewServer([]grpc.ServerOption{}...)
 
 	if version == "" {
-		panic(fmt.Errorf("usage: \n        /example-hook-sidecar --version v1alpha1|v1alpha2"))
+		panic(fmt.Errorf("usage: \n        /kubevirt-sidecar --version v1alpha1|v1alpha2"))
 	}
 	hooksInfo.RegisterInfoServer(server, infoServer{Version: version})
 	hooksV1alpha1.RegisterCallbacksServer(server, v1alpha1Server{})
