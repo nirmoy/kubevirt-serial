@@ -145,7 +145,7 @@ func onDefineDomain(vmiJSON []byte, domainXML []byte) ([]byte, error) {
 }
 
 func main() {
-	log.InitializeLogging("serial-hook-sidecar")
+	log.InitializeLogging("serial-console-hook-sidecar")
 
 	var version string
 	pflag.StringVar(&version, "version", "", "hook version to use")
