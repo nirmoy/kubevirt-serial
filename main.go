@@ -40,7 +40,7 @@ import (
 )
 
 const (
-	serialConsoleFileAnnotation  = "smbios.vm.kubevirt.io/serialConsoleFile"
+	serialConsoleFileAnnotation  = "serial.vm.kubevirt.io/serialConsoleFile"
 	onDefineDomainLoggingMessage = "Hook's OnDefineDomain callback method has been called"
 )
 
@@ -139,7 +139,7 @@ func onDefineDomain(vmiJSON []byte, domainXML []byte) ([]byte, error) {
 		panic(err)
 	}
 
-	log.Log.Info("Successfully updated original domain spec with requested SMBIOS attributes")
+	log.Log.Info("Successfully updated original domain spec with requested serial console attributes")
 
 	return newDomainXML, nil
 }
