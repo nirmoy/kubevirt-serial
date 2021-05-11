@@ -107,8 +107,8 @@ func onDefineDomain(vmiJSON []byte, domainXML []byte) ([]byte, error) {
 
 	annotations := vmiSpec.GetAnnotations()
 
-	if _, found := annotations[serialConsoleFileAnnotation]; !found {
-		log.Log.Info("Serial console hook sidecar was requested, but no attributes provided. Returning original domain spec")
+	if annon, found := annotations[serialConsoleFileAnnotation]; !found {
+		log.Log.Infof("Serial console hook sidecar was requested, but no attributes provided. Returning original domain spec[%s]", annon)
 		return domainXML, nil
 	}
 
